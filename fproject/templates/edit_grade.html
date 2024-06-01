@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Редактировать журнал</h1>
+  <div class="edit-form-container">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.student_id.label }} {{ form.student_id() }}<br>
+      {{ form.subject_id.label }} {{ form.subject_id() }}<br>
+      {{ form.grade.label }} {{ form.grade() }}<br>
+      {{ form.submit() }}
+    </form>
+  </div>
+{% endblock %}

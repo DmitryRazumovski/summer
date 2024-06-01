@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>School App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('index') }}">Домашняя страница</a>
+      <a href="{{ url_for('manage_teachers') }}">Учителя</a>
+      <a href="{{ url_for('manage_subjects') }}">Предметы</a>
+      <a href="{{ url_for('manage_students') }}">Ученики</a>
+      <a href="{{ url_for('manage_grades') }}">Журнал</a>
+    </nav>
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

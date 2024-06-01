@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Журнал</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.student_id.label }} {{ form.student_id() }}<br>
+    {{ form.subject_id.label }} {{ form.subject_id() }}<br>
+    {{ form.grade.label }} {{ form.grade() }}<br>
+    {{ form.submit() }}
+  </form>
+  <ul>
+    {% for grade in grades %}
+      <li>
+        Ученик: {{ grade.student.name }}, Предмет: {{ grade.subject.name }}, Оценка: {{ grade.grade }}
+        <div>
+          <a href="{{ url_for('edit_grade', id=grade.id) }}">Редактировать</a>
+          <form action="{{ url_for('delete_grade', id=grade.id) }}" method="POST">
+            <button type="submit">Удалить</button>
+          </form>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

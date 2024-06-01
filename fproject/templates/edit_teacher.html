@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Редактировать учителя</h1>
+  <div class="edit-form-container">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.name.label }} {{ form.name() }}<br>
+      {{ form.subject_id.label }} {{ form.subject_id() }}<br>
+      {{ form.submit() }}
+    </form>
+  </div>
+{% endblock %}
